@@ -1,0 +1,6 @@
+@WindsorApi_HostAddress = http://localhost:5202
+
+GET {{WindsorApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

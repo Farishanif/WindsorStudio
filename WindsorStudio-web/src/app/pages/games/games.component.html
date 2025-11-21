@@ -1,0 +1,18 @@
+<!-- src/app/pages/games/games.component.html -->
+<h1>Our Games</h1>
+
+<!-- classic directives (works everywhere) -->
+<div *ngIf="loading">Loading games...</div>
+<div *ngIf="!loading && error">Failed to load games.</div>
+
+<!-- when not loading, show games from signal -->
+<ul *ngIf="!loading && games().length > 0">
+  <li *ngFor="let game of games(); trackBy: trackById">
+    {{ game.name }} – {{ game.genre }}
+  </li>
+</ul>
+
+<!-- no-results -->
+<div *ngIf="!loading && !error && games().length === 0">
+  No games found.
+</div>
