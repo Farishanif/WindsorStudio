@@ -6,7 +6,8 @@
 </div>
 <div>
   <p>1. Home Pages</p>
-  ![screenshot](imageFolder/home-pages-1.png)
-  ![screenshot](imageFolder/home-pages-2.png)
-  ![screenshot](imageFolder/home-pages-3.png)
 </div>
+![screenshot](imageFolder/home-pages-1.png)
+![screenshot](imageFolder/home-pages-2.png)
+![screenshot](imageFolder/home-pages-3.png)
+
