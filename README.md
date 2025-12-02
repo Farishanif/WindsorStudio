@@ -6,8 +6,8 @@
 </div>
 <div>
   <p>1. Home Pages</p>
+  ![alt text](https://github.com/Farishanif/WindsorStudio/blob/main/imageFolder/home-pages-1.png?raw=true)
+  ![alt text](https://github.com/Farishanif/WindsorStudio/blob/main/imageFolder/home-pages-2.png?raw=true)
+  ![alt text](https://github.com/Farishanif/WindsorStudio/blob/main/imageFolder/home-pages-3.png?raw=true)
 </div>
-![screenshot](imageFolder/home-pages-1.png)
-![screenshot](imageFolder/home-pages-2.png)
-![screenshot](imageFolder/home-pages-3.png)
 
