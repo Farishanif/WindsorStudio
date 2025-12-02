@@ -1,32 +1,93 @@
-<section class="hero">
-  <div class="content">
-    <h1>Windsor Studio</h1>
-    <p>
-      Crafting immersive game worlds with passion, creativity, and cutting-edge technology.
-    </p>
-    <a routerLink="/games" class="btn">View Our Games</a>
-  </div>
-</section>
+<div class="home-container">
 
-<section class="about">
-  <h2>About Us</h2>
-  <p>
-    We are an independent game studio focused on blending storytelling, art, and gameplay into unforgettable experiences.
-  </p>
-</section>
-
-<section class="preview">
-  <h2>Featured Titles</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Project Neon</h3>
-      <p>A fast-paced cyber-RPG set in a neon-drenched dystopia.</p>
+  <section class="hero-section">
+    <div class="hero-background">
     </div>
-
-    <div class="card">
-      <h3>VoidRunner</h3>
-      <p>A sci-fi 2D platformer exploring the edges of the universe.</p>
+    <div class="hero-content">
+      <h1>
+        <span class="main-title">Forge Your Ideal Worlds</span>
+        <span class="sub-title">Welcome to Windsor Studio</span>
+      </h1>
+      <p>
+        Crafting immersive game worlds with passion, creativity, and cutting-edge technology.
+      </p>
+      <p>Discover our latest titles, read developer news, and join the community.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="main-layout-container">
+
+    <aside class="left-sidebar">
+      <h3>Latest News Links</h3>
+      <div *ngFor="let article of latestNews" class="news-link-item">
+        <a [routerLink]="['/news', article.id]">
+          <span class="news-date">{{ article.date | date: 'shortDate' }}</span>
+          <span class="news-title">{{ article.title }}</span>
+        </a>
+      </div>
+      <a routerLink="/news" class="view-all-link">View All News &rarr;</a>
+    </aside>
+
+    <main class="primary-content">
+      <h2>Featured Games</h2>
+      <section class="game-showcase-grid">
+
+        <article *ngIf="latestGames[0]" 
+                 class="game-card large" 
+                 [style.backgroundImage]="'url(' + latestGames[0].imagePath + ')'">
+          <div class="card-info">
+            <span class="category-tag">{{ latestGames[0].genres[0] || 'Game' }}</span>
+            <h3>{{ latestGames[0].title }}</h3>
+            <p>{{ latestGames[0].tagline }}</p>
+            <a [routerLink]="['/games', latestGames[0].id]" class="btn-detail">Discover</a>
+          </div>
+        </article>
+
+        <article *ngIf="latestGames[1]" 
+                 class="game-card small" 
+                 [style.backgroundImage]="'url(' + latestGames[1].imagePath + ')'">
+          <div class="card-info">
+            <h3>{{ latestGames[1].title }}</h3>
+            <a [routerLink]="['/games', latestGames[1].id]" class="btn-detail">Play Now</a>
+          </div>
+        </article>
+
+        <article *ngIf="latestGames[2]" 
+                 class="game-card small" 
+                 [style.backgroundImage]="'url(' + latestGames[2].imagePath + ')'">
+          <div class="card-info">
+            <h3>{{ latestGames[2].title }}</h3>
+            <a [routerLink]="['/games', latestGames[2].id]" class="btn-detail">Learn More</a>
+          </div>
+        </article>
+
+        <article *ngIf="latestNews[0]" 
+                 class="game-card wide" 
+                 [style.backgroundImage]="'url(' + latestNews[0].imagePath + ')'">
+          <div class="card-info">
+            <span class="category-tag news-tag">{{ latestNews[0].category }}</span>
+            <h3>{{ latestNews[0].title }}</h3>
+            <a [routerLink]="['/news', latestNews[0].id]" class="btn-detail">Read Blog</a>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <aside class="right-sidebar">
+      <h3>Community Feed</h3>
+      <p>Connect with us on social media for live updates and discussions.</p>
+    </aside>
+
+    </section>
+  
+  <section class="about-hero-section" style="background-image: url('assets/about-background.jpg');">
+      <div class="hero-overlay">
+          <h2>About Windsor Studio</h2>
+          <p class="tagline">Forging captivating digital realms with a focus on narrative and innovation.</p>
+          <p>We are an independent game studio focused on blending storytelling, art, and gameplay into unforgettable experiences.</p>
+          <a routerLink="/about" routerLinkActive="app-about" class="btn-primary-inverse">Read Our Story</a>
+      </div>
+  </section>
+
+</div>

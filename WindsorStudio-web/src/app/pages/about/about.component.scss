@@ -1,0 +1,106 @@
+@import 'styles/variables';
+
+.about-page-container {
+  padding: $space-large 5vw;
+  background: url('/assets/background.jpg') center center no-repeat;
+  background-size: 100% 100%;
+}
+
+// --- Hero & Header ---
+.about-hero {
+  text-align: center;
+  padding: 60px 0 20px;
+  border-bottom: 2px solid $color-dark-surface;
+  
+  h1 {
+    color: $color-text-light;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px $color-accent-secondary, 0 0 30px $color-accent-secondary;
+  }
+  p {
+    color: $color-text-muted;
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// --- General Section Styling ---
+section {
+  padding: 60px 0;
+  
+  h2 {
+    text-align: center;
+    color: $color-text-light;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+}
+
+// --- Mission Section ---
+.mission-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  
+  .card {
+    flex: 1;
+    background-color: $color-dark-surface;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 5px solid $color-accent-secondary;
+    
+    h3 {
+      color: $color-accent-secondary;
+      margin-bottom: 10px;
+    }
+    p {
+      color: $color-text-muted;
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+// --- Team Section ---
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  
+  .team-member-card {
+    background-color: $color-dark-surface;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      border: 3px solid $color-accent-primary;
+    }
+    
+    h3 {
+      color: $color-text-light;
+      margin-bottom: 5px;
+    }
+    .member-title {
+      color: $color-accent-primary;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .member-bio {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+    }
+  }
+}

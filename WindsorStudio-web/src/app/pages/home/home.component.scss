@@ -1,78 +1,403 @@
-.hero {
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to bottom right, #111, #222);
-  color: white;
-  padding: 3rem;
+@import 'styles/variables';
 
-  .content {
-    max-width: 600px;
+$header-height: 100px; 
+
+
+.hero-section {
+  position: relative;
+  min-height: 80vh; 
+  padding-top: $header-height; 
+  padding-bottom: 0.5rem; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: url('/assets/hero-bg.jpeg') center center no-repeat;
+    background-size: 100% 100%;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); 
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: $color-text-light;
+    max-width: 800px;
+    max-height: calc(100vh - $header-height - 50px);
 
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+
+      .main-title {
+        font-family: 'Oswald', sans-serif; 
+        font-size: clamp(2rem, 8vw, 5rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        text-shadow: 0 0 15px $color-accent-secondary, 0 0 30px $color-accent-secondary;
+      }
+      .sub-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 5px;
+        margin-top: 10px;
+      }
     }
 
     p {
       font-size: 1.2rem;
-      opacity: 0.85;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .btn {
-      background: #ff3366;
-      padding: 12px 24px;
+    .cta-button {
+      background-color: #ff0055; 
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.2s;
-
+      font-weight: 700;
+      padding: 1rem 3rem;
+      border: 2px solid #ff0055;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      
       &:hover {
-        background: #ff6699;
+        background-color: darken(#ff0055, 10%);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255, 0, 85, 0.4);
       }
     }
   }
 }
 
-.about,
-.preview {
-  padding: 3rem;
-  text-align: center;
-
-  h2 {
+.main-layout-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  min-height: 50vh; 
+  gap: 20px; 
+  padding: 2rem 5vw; 
+  background-color: rgba($color-accent-primary, 0.1); 
+  background: url('/assets/background.jpg') center center no-repeat;
+  background-size: 100% 100%;
+  
+  // Sidebars Headers
+  h3 {
+    color: $color-accent-primary;
     margin-bottom: 1rem;
-  }
-
-  p {
-    max-width: 700px;
-    margin: auto;
-    opacity: 0.75;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-dark-surface;
+    text-transform: uppercase;
+    font-size: 1.2rem;
   }
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+.left-sidebar {
+  background-color: rgba($color-dark-surface, 0.5);
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
 
-  .card {
-    background: #111;
-    color: #eee;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 260px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+.primary-content {
+  background-color: rgba($color-dark-surface, 0.5); 
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.right-sidebar {
+  background-color: rgba($color-dark-surface, 0.5); 
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+// --- NEWS LINK ITEM STYLES (NEW) ---
+.news-link-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba($color-text-light, 0.1); // Subtle divider
+    
+    &:last-child {
+        border-bottom: none;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: $color-text-muted;
+        transition: color 0.2s;
+        
+        &:hover {
+            color: $color-accent-secondary; // Highlight on hover
+        }
+    }
+    .news-date {
+        color: rgba($color-text-muted, 0.7);
+        font-size: 0.75rem;
+        margin-right: 8px;
+        white-space: nowrap; // Keep date on one line
+    }
+    .news-title {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+}
+
+.view-all-link {
+    display: block;
+    margin-top: 15px;
+    text-align: center; // Center or right align based on preference
+    color: $color-accent-primary;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+    
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// --- GAME SHOWCASE GRID (Existing, no changes needed) ---
+.game-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  padding-top: 2rem;
+
+  h2 {
+    grid-column: 1 / -1; 
+    color: $color-text-light;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+  }
+}
+
+.game-card {
+  height: 250px; 
+  background-size: cover;
+  background-position: center;
+  background-color: $color-dark-surface;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-out, box-shadow 0.3s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba($color-accent-primary, 0.3);
+  }
+
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.5rem;
+    color: $color-text-light;
 
     h3 {
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
+    }
+    p {
+      color: $color-text-muted;
+    }
+  }
+
+  .category-tag {
+    background-color: $color-accent-primary;
+    color: $color-dark-bg;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%); 
+  }
+  
+  .news-tag {
+      background-color: $color-accent-secondary;
+  }
+
+  .btn-detail {
+    display: inline-block;
+    background-color: $color-accent-secondary;
+    color: $color-text-light;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background-color: darken($color-accent-secondary, 10%);
+    }
+  }
+}
+
+/* --- Specific Layout Weights (Existing, no changes needed) --- */
+
+.game-card.large {
+  grid-column: span 2; 
+  grid-row: span 2;
+  height: 520px; 
+
+  .card-info {
+    h3 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+.game-card.wide {
+  grid-column: 1 / -1; 
+  height: 200px;
+  background-position: top center; 
+  
+  .card-info {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    padding: 0 1.5rem;
+  }
+}
+
+
+// --- ABOUT SECTION STYLING (NEW HERO STYLE) ---
+.about-hero-section {
+    position: relative;
+    padding: 100px 5vw;
+    background-size: cover;
+    background-position: center;
+    color: $color-text-light; 
+    
+    // Ensure the image doesn't tile if it's smaller than the screen
+    background-repeat: no-repeat; 
+
+    // Optional: Add a subtle overlay for better text readability, even if the image is bright
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-dark-bg, 0.5); // 50% opacity dark background
+    }
+
+    .hero-overlay {
+        position: relative;
+        z-index: 10; 
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        
+        // Optional: Background for the text block itself, if needed
+        // background-color: rgba($color-dark-bg, 0.85); 
+        padding: 40px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 3rem;
+        color: $color-accent-primary;
+        margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        color: $color-text-light;
+        margin-bottom: 20px;
     }
 
     p {
-      opacity: 0.7;
-      font-size: 0.95rem;
+        font-size: 1rem;
+        color: $color-text-muted;
+        margin-bottom: 30px;
     }
-  }
+
+    .btn-primary-inverse {
+        // Style a button that contrasts well with the dark overlay
+        background-color: transparent;
+        border: 2px solid $color-accent-secondary;
+        color: $color-accent-secondary;
+        padding: 10px 30px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 600;
+        transition: background-color 0.3s, color 0.3s;
+        
+        &:hover {
+            background-color: $color-accent-secondary;
+            color: $color-dark-bg;
+        }
+    }
+}
+
+
+// --- Responsiveness for Tablets/Mobile (Existing, no changes needed) ---
+@media (max-width: 992px) {
+    .main-layout-container {
+        grid-template-columns: 1fr; /* Stack into a single column on mid-size screens */
+    }
+    .game-showcase-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .game-card.large, .game-card.wide {
+        grid-column: span 2; 
+    }
+    .game-card.large {
+        height: 450px; 
+    }
+    .game-card {
+        height: 300px; 
+    }
+    .left-sidebar, .right-sidebar {
+        grid-column: 1 / -1; /* Ensure sidebars take full width */
+    }
+}
+
+@media (max-width: 600px) {
+    .game-showcase-grid {
+        grid-template-columns: 1fr; 
+    }
+    .game-card.large, .game-card.small, .game-card.wide {
+        grid-column: span 1; 
+        height: 300px;
+    }
+    .about-hero-section {
+        padding: 50px 3vw;
+    }
+    .about-hero-section h2 {
+        font-size: 2.5rem;
+    }
 }

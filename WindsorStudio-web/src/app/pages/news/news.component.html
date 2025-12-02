@@ -1,0 +1,26 @@
+<div class="news-page-container">
+  
+  <header class="news-hero">
+    <h1>Studio News & Updates</h1>
+    <p>The latest information from the Windsor Studio development and community teams.</p>
+  </header>
+
+  <section class="news-grid">
+    <article *ngFor="let article of articles" class="news-card">
+      <div class="card-image-wrapper">
+        <img [src]="article.imagePath" [alt]="article.title">
+      </div>
+      <div class="card-content">
+        <span class="card-category" [ngClass]="getCategoryClass(article.category)">{{ article.category }}</span>
+        <h2 class="card-title">{{ article.title }}</h2>
+        <p class="card-summary">{{ article.summary }}</p>
+        <div class="card-meta">
+          <span class="meta-date">{{ article.date | date: 'mediumDate' }}</span>
+          <span class="meta-author">by {{ article.author }}</span>
+        </div>
+        <a [routerLink]="['/news', article.id]" class="read-more-link">Read Full Article &rarr;</a>
+      </div>
+    </article>
+  </section>
+
+</div>

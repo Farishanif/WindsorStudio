@@ -1,18 +1,53 @@
-<!-- src/app/pages/games/games.component.html -->
-<h1>Our Games</h1>
+<div class="games-page-container">
+  
+  <header class="gallery-hero">
+    <h1>Check Our Game</h1>
+  </header>
+
+  <div class="filter-bar">
+    <button 
+      *ngFor="let genre of availableGenres"
+      (click)="filterByGenre(genre)"
+      [class.active]="selectedGenre === genre || (selectedGenre === '' && genre === 'All')"
+      class="filter-btn">
+      {{ genre }}
+    </button>
+  </div>
+
+  <section class="game-gallery-grid">
+    <article *ngFor="let game of filteredGames" class="gallery-card">
+      <div class="card-image-wrapper">
+        <img [src]="game.imagePath" [alt]="game.title">
+        <div class="release-tag">{{ game.releaseDate | date: 'MMM yyyy' }}</div>
+      </div>
+      <div class="card-content">
+        <h3>{{ game.title }}</h3>
+        <p class="tagline">{{ game.tagline }}</p>
+        <div class="genres">
+          <span *ngFor="let genre of game.genres" class="genre-pill">{{ genre }}</span>
+        </div>
+        <div class="platforms">
+          <span *ngFor="let platform of game.platforms" class="platform-icon">{{ platform }}</span>
+        </div>
+        <a [routerLink]="['/games', game.id]" class="view-detail-link">View Game Page &rarr;</a>
+      </div>
+    </article>
+  </section>
+
+</div>
 
 <!-- classic directives (works everywhere) -->
-<div *ngIf="loading">Loading games...</div>
-<div *ngIf="!loading && error">Failed to load games.</div>
+<!-- <div *ngIf="loading">Loading games...</div> -->
+<!-- <div *ngIf="!loading && error">Failed to load games.</div> -->
 
 <!-- when not loading, show games from signal -->
-<ul *ngIf="!loading && games().length > 0">
-  <li *ngFor="let game of games(); trackBy: trackById">
-    {{ game.name }} – {{ game.genre }}
-  </li>
-</ul>
+<!-- <ul *ngIf="!loading && games().length > 0"> -->
+  <!-- <li *ngFor="let game of games(); trackBy: trackById"> -->
+    <!-- {{ game.name }} – {{ game.genre }} -->
+  <!-- </li> -->
+<!-- </ul> -->
 
 <!-- no-results -->
-<div *ngIf="!loading && !error && games().length === 0">
-  No games found.
-</div>
+<!-- <div *ngIf="!loading && !error && games().length === 0"> -->
+  <!-- No games found. -->
+<!-- </div> -->

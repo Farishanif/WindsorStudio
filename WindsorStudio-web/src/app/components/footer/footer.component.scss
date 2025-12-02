@@ -1,0 +1,124 @@
+@import 'styles/variables';
+$padding-width: 5vw;
+
+.game-footer {
+  background-color: $color-dark-bg;
+  color: $color-text-muted;
+  padding: 4rem $padding-width 2rem; // Extra padding on top
+  border-top: 2px solid $column-bg; // Subtle separation line
+}
+
+.footer-grid-container {
+  display: grid;
+  // Define 4 columns: 2 parts for logo, 1 part for links, 1 part for links, 2 parts for social/cta
+  grid-template-columns: 2fr 1fr 1fr 2fr; 
+  gap: 30px;
+  max-width: 1400px; // Keep content centered and readable on very large screens
+  margin: 0 auto;
+  text-align: left;
+}
+
+.col {
+  h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  a {
+    color: $color-text-muted;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+
+    &:hover {
+      color: $color-accent-primary;
+      text-shadow: 0 0 5px rgba($color-accent-primary, 0.5);
+    }
+  }
+}
+
+.footer-logo {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.5rem;
+  color: $color-accent-primary;
+  text-shadow: 0 0 5px rgba($color-accent-primary, 0.8);
+  display: block; // Ensures the logo is block level
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  i {
+    font-size: 1.5rem;
+    color: $color-text-muted;
+    transition: color 0.3s;
+    
+    // Icon hover effect
+    &:hover {
+      color: $color-accent-primary;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.newsletter-btn {
+  // Use the same stylish button design as the navbar CTA
+  background: linear-gradient(45deg, $color-accent-primary, darken($color-accent-primary, 20%));
+  color: $color-dark-bg; // Dark text on bright background
+  padding: 0.75rem 1.5rem;
+  border: none;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba($color-accent-primary, 0.6);
+  }
+}
+
+// 📱 Responsiveness (Key for mobile view)
+@media (max-width: 768px) {
+  .footer-grid-container {
+    // Stack columns on smaller screens (2 columns)
+    grid-template-columns: 1fr 1fr; 
+    text-align: center;
+  }
+  
+  .studio-info {
+    grid-column: span 2; // Make studio info span both columns on mobile
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-cta {
+    .social-icons {
+      justify-content: center; // Center the icons on mobile
+    }
+    .newsletter-btn {
+      width: 100%; // Make CTA button full width
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid-container {
+    // Single column stack on tiny screens
+    grid-template-columns: 1fr; 
+  }
+  .col {
+    margin-bottom: 2rem;
+  }
+}

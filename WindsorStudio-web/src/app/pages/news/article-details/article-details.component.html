@@ -1,0 +1,52 @@
+<div class="article-container" *ngIf="article">
+  
+  <header class="article-header">
+    <div class="metadata">
+        <span class="category">{{ article.category }}</span>
+        <span class="date">{{ article.date | date: 'longDate' }}</span>
+        <span class="author">by {{ article.author }}</span>
+    </div>
+    <h1>{{ article.title }}</h1>
+  </header>
+
+  <section class="article-body">
+    <img [src]="article.imagePath" [alt]="article.title" class="featured-image">
+
+    <div class="article-content">
+      <p>
+        **Article Summary:** {{ article.summary }}
+      </p>
+      
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. 
+        Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. 
+        Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. 
+        Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+      </p>
+
+      <h2>Deep Dive Section</h2>
+      <p>
+        Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. 
+        Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque egestas. 
+        Nulla facilisi. Cras placerat accumsan nulla. Integer ac leo. Vivamus suscipit tortor eget felis 
+        facilisis fermentum.
+      </p>
+      
+      <blockquote>
+        "The community response to the latest patch has been overwhelmingly positive, 
+        confirming our direction in balance changes for the next quarter."
+      </blockquote>
+
+      <p>
+        Nullam eu augue vel metus scelerisque porttitor. Phasellus id nisl in leo accumsan feugiat. 
+        Praesent vel mi at metus.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<div *ngIf="!article" class="not-found-message">
+    <h1>Article Not Found</h1>
+    <p>We couldn't locate the news article you were looking for.</p>
+</div>

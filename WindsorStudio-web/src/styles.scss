@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+// GLOBAL STYLES (src/styles.scss)
+@import 'styles/variables';
+
+$app-bg: #20434d; // Very dark grey/near black
+
+html, body {
+  // Prevent horizontal scrollbars caused by elements extending beyond the viewport width
+  background: url('/assets/background.jpg') center center no-repeat;
+  background-size: 100% 100%;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+  // Ensure vertical scroll remains active
+  // overflow-y: scroll;
+}
+body {
+  // Ensure the body fills the viewport
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // Remove default margin/padding
+  margin: 0;
+  padding: 0; 
+  
+  // Set the global background
+  background-color: $app-bg; 
+  color: white; // Set default text color for all pages
+  font-family: 'Roboto', sans-serif; // Set global default font
+
+  // Optional: Add a subtle grain/texture overlay for a cool, dark UI
+  // background-image: url('/assets/textures/dark-noise.png');
+}
+app-root {
+  // Allow the Angular app to take up remaining space
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+// You'll need to define a main wrapper in app.component.html that holds the content between header and footer.
+.app-content-wrapper {
+  flex-grow: 1;
+}

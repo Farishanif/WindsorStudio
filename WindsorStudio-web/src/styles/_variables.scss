@@ -1,0 +1,24 @@
+// --- Typography ---
+$font-primary: 'Electrolize', sans-serif;
+$font-body: 'Roboto', sans-serif;
+
+// --- Colors ---
+$color-dark-bg: #0a0a0f;      // Main application background
+$color-dark-surface: #15151f; // Card/sidebar background
+$color-text-light: #fefefe;   // White/light text
+$color-text-muted: #aaaaaa;   // Muted gray text
+
+// --- Accent Colors ---
+$color-accent-primary: #24aae3; // Cyan/Electric Blue (for highlights, navbar)
+$color-accent-secondary: #ff0055; // Crimson/Red (for CTAs, interactive elements)
+
+// --- Borders ---
+$border-color: #1a1a2e;
+$column-bg: #15151f;
+
+// --- Spacing ---
+$space-base: 1rem;
+$space-large: 2rem;
+
+// --- Component Heights ---
+$header-height: 100px;
