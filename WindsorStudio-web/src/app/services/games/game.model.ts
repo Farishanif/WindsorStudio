@@ -1,5 +1,3 @@
-// src/app/services/games/game.model.ts
-
 export interface Game {
   id: number;
   title: string;

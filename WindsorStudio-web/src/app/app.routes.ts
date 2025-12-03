@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  // 1. Home Page (Default Route)
+
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
   {
+  // 1. Home Page
     path: 'home',
-    // Load the route configuration file for the Home feature
     loadChildren: () => import('./pages/home/home.routes').then(m => m.HOME_ROUTES)
   },
 
@@ -30,8 +30,6 @@ export const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./pages/about/about.routes').then(m => m.ABOUT_ROUTES)
   },
-  
-  
 
   // 5. Catch-all for 404
   {

@@ -25,7 +25,6 @@ export class App implements OnInit {
         const fragment = this.router.parseUrl(this.router.url).fragment;
         
         if (fragment) {
-          // Delay to ensure DOM is rendered
           setTimeout(() => {
             const element = document.getElementById(fragment);
             if (element) {
@@ -33,7 +32,6 @@ export class App implements OnInit {
             }
           }, 100);
         } else {
-          // No fragment, scroll to top
           this.viewportScroller.scrollToPosition([0, 0]);
         }
       });
