@@ -299,6 +299,8 @@ $header-height: 100px;
     background-size: cover;
     background-position: center;
     color: $color-text-light; 
+    background: url('/assets/about-background.jpg') center center no-repeat;
+    background-size: 100% 120%;
     
     // Ensure the image doesn't tile if it's smaller than the screen
     background-repeat: no-repeat; 

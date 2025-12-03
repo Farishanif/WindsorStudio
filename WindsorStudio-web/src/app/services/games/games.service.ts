@@ -52,6 +52,7 @@ export class GamesService {
     return of(game);
   }
 }
+// backend connection example
 // export class GamesService {
 
 //   private apiUrl = 'http://localhost:5202/api/games'; // your ASP.NET Core endpoint
