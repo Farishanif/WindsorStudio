@@ -5,7 +5,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 export const NEWS_ROUTES: Routes = [
   {
     path: '',
-    component: NewsComponent // Loads the main list when hitting /news
+    component: NewsComponent
   },
   {
     path: ':id', 

@@ -1,8 +1,7 @@
-// src/app/pages/home/home.component.ts
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { GamesService } from '../../services/games/games.service'; // Adjust path
-import { NewsService } from '../../services/news/news.service'; // Adjust path
+import { GamesService } from '../../services/games/games.service';
+import { NewsService } from '../../services/news/news.service';
 import { Game } from '../../services/games/game.model';
 import { Article } from '../../services/news/article.model';
 
@@ -13,7 +12,6 @@ import { Article } from '../../services/news/article.model';
   imports: [SharedModule] 
 })
 export class HomeComponent implements OnInit {
-  // New properties to hold the filtered data
   latestGames: Game[] = [];
   latestNews: Article[] = [];
 

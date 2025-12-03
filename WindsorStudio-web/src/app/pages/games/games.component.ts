@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../../services/games/games.service';
 import { Game } from '../../services/games/game.model';
-import { SharedModule } from '../../shared/shared.module'; // Adjust path if needed
+import { SharedModule } from '../../shared/shared.module';
 import { CommonModule } from '@angular/common';
 
 @Component({
