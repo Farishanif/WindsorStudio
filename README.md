@@ -31,3 +31,10 @@
   <image src="./imageFolder/about-pages.png">
 </div>
 
+<div> 
+  <h2>Backend: </h1>
+</div>
+<div>
+  <p>currently thinking staying as microservice or monolithic</p>
+</div>
+
