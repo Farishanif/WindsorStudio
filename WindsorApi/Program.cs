@@ -5,8 +5,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngular", policy =>
     {
         policy
-            .WithOrigins("http://localhost:4200",
-                         "http://localhost:4201",
+            .WithOrigins("http://localhost:82",
+                         "http://localhost:4200",
                          "http://localhost:5173",
                          "http://localhost:5202",
                          "http://localhost:5174",

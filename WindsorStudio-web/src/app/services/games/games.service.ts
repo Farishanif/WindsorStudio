@@ -8,17 +8,17 @@ const MOCK_GAMES: Game[] = [
     id: 1, 
     title: 'Reachable', 
     tagline: 'A journey about love and passion a pair of younglings', 
-    releaseDate: new Date('2025-10-20'), 
-    genres: ['RPG', 'Fantasy'], 
+    releaseDate: new Date('2026-07-10'), 
+    genres: ['Simulation', 'Fantasy'], 
     platforms: ['PC', 'Android', 'IOS'], 
     rating: 4.8, 
     imagePath: '/assets/comingsoon.jpg' 
   },
   { 
     id: 2, 
-    title: 'The Last Breach', 
-    tagline: 'Survival zombie game in a post-apocalyptic world.', 
-    releaseDate: new Date('2026-05-15'), 
+    title: 'Infecticore', 
+    tagline: 'A Mobile survival zombie game in a post-apocalyptic world.', 
+    releaseDate: new Date('2027-05-15'), 
     genres: ['Survival', 'Horror'], 
     platforms: [ 'Android', 'IOS'], 
     rating: 4.2, 
@@ -27,12 +27,12 @@ const MOCK_GAMES: Game[] = [
   { 
     id: 
     3, 
-    title: 'Project Nova', 
-    tagline: 'Fast-paced cybernetic combat in 2D platforming.', 
-    releaseDate: new Date('2027-01-01'), 
+    title: 'Cloud Moon', 
+    tagline: 'An Eye Opening Adventure of Discovering the Way to find the Meaning of Life.', 
+    releaseDate: new Date('2028-11-10'), 
     genres: ['Platformer', 'Action', 'Sci-Fi'], 
     platforms: ['PC'], 
-    rating: 3.9, 
+    rating: 4.6, 
     imagePath: '/assets/comingsoon.jpg' },
 ];
 

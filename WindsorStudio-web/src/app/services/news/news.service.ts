@@ -5,8 +5,9 @@ import { Observable, of } from 'rxjs';
 const MOCK_ARTICLES: Article[] = [
   { 
     id: 1, 
-    title: 'WINDSOR: The Creation of the website for studio windsor', 
-    summary: 'As a way to extend our reach and making comitment on progresing to our future gaming studio, we start by creating this website.', 
+    title: 'WINDSOR: The Creation of the Game Studio Windsor', 
+    summary: `Hi! Keeper Bee Here, I'm very excited to be able to assemble a new team for game development. 
+              I will be your lead developer and project lead! So, I am here to help!.`, 
     author: 'DevTeam', 
     date: new Date('2025-11-20'), 
     category: 'DevBlog', imagePath: '/assets/comingsoon.jpg', 
@@ -14,8 +15,8 @@ const MOCK_ARTICLES: Article[] = [
   },
   { 
     id: 2, 
-    title: 'The History of windsor studio', 
-    summary: 'We sit down reading, observing, and discussing there so much beatifull world that can be created in a mind of an individual.', 
+    title: 'About Us! Windsor Studio', 
+    summary: `We (will include you!) are passionate game developers, programmers, and artists which are working together to create our thoughts and ideas into entertaining and absolutely fun gameplay experiences!`, 
     author: 'Marketing Team', 
     date: new Date('2025-11-15'), 
     category: 'Update', 
@@ -24,8 +25,8 @@ const MOCK_ARTICLES: Article[] = [
   },
   { 
     id: 3, 
-    title: 'Is there any accomplishment that this studio has been made?', 
-    summary: 'After the long periode creation of the studio what are their plan for the future?', 
+    title: 'What Lies Ahead?', 
+    summary: 'After the long planning and preparation, what does the future hold for Windsor Studio?', 
     author: 'Community Manager', 
     date: new Date('2025-11-10'), 
     category: 'Community', 
