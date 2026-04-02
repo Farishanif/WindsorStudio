@@ -8,7 +8,7 @@ const MOCK_MEMBER: Member[] = [
     name: 'KeeperBee', 
     job: 'Lead Developer / Project Leader', 
     joinDate: new Date('2025-11-20'),
-    description: 'Visionary behind the Windsor principle.', 
+    description: 'Visionary behind the Windsor Team.', 
     imagePath: '/assets/comingsoon.jpg'
   },
   { 
@@ -22,7 +22,7 @@ const MOCK_MEMBER: Member[] = [
   { 
     id: 3, 
     name: 'Erica', 
-    job: 'Game Designer and Concept Artist', 
+    job: 'Game Designer and Concept Artist Designer', 
     joinDate: new Date('2025-11-20'),
     description: 'Specializes in creating engaging game concepts and designs.', 
     imagePath: '/assets/comingsoon.jpg'
@@ -46,9 +46,9 @@ const MOCK_MEMBER: Member[] = [
   { 
     id: 6, 
     name: 'Keenan', 
-    job: 'Sound Designer', 
+    job: 'Concept Artist Designer', 
     joinDate: new Date('2025-11-20'),
-    description: 'Collaborates with the sound designer team to create immersive soundscapes.', 
+    description: 'Creates concept art and designs for the game.', 
     imagePath: '/assets/comingsoon.jpg'
   },
   { 
