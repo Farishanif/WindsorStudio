@@ -29,7 +29,7 @@ const MOCK_MEMBER: Member[] = [
   },
   { 
     id: 4, 
-    name: 'Farishanif', 
+    name: 'Farizzz', 
     job: 'Game developer and Programmer', 
     joinDate: new Date('2025-11-20'),
     description: 'Focuses on creating efficient and maintainable game code.', 
@@ -37,7 +37,7 @@ const MOCK_MEMBER: Member[] = [
   },
   { 
     id: 5, 
-    name: 'Senility Sen', 
+    name: 'Adindachair', 
     job: 'Game Artist and Designer', 
     joinDate: new Date('2025-11-20'),
     description: 'Focuses on evocative and immersive world design.', 
