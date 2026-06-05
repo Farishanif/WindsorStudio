@@ -18,7 +18,10 @@ export class GamesComponent implements OnInit {
   filteredGames: Game[] = [];
   // For filtering later:
   selectedGenre: string = '';
-  availableGenres: string[] = ['All', 'RPG', 'Horror', 'Survival', 'Action', 'Sci-Fi', 'Platformer'];
+  availableGenres: string[] = [
+    'All', 'Card-Game', ' Deck-Building','Side-Scrolling', 'Adventure','Psychological',
+    'Survival', 'Horror', 'Action','Visual Novel','Romance','Sci-fi'
+  ];
   
   constructor(private gamesService: GamesService) { }
 

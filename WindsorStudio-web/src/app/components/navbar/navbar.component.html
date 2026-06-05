@@ -1,15 +1,52 @@
 <header class="game-header">
+
+  <!-- Logo: always visible -->
   <div class="logo">
-    <a routerLink="/home"><img src="/assets/windsor.png" alt="Studio Logo"/></a>
+    @if (navContext === 'home') {
+    <a (click)="scrollTo('hero')" style="cursor:pointer">
+      <img src="/assets/windsor.png" alt="Studio Logo" />
+    </a>
+    } @else {
+    <a (click)="goHome()" style="cursor:pointer">
+      <img src="/assets/windsor.png" alt="Studio Logo" />
+    </a>
+    }
   </div>
+
+  @if (navContext === 'home') {
   <nav>
     <ul>
-      <li><a routerLink="/games" routerLinkActive="app-games">Games</a></li>
-      <li><a routerLink="/news" routerLinkActive="app-news">News</a></li>
-      <li><a routerLink="/about" routerLinkActive="app-about">About Us</a></li>
+      <li>
+        <a (click)="scrollTo('profile')" [class.active]="activeSection === 'profile'" style="cursor:pointer">
+          Profile
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollTo('games')" [class.active]="activeSection === 'games'" style="cursor:pointer">
+          Games
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollTo('contact')" [class.active]="activeSection === 'contact'" style="cursor:pointer">
+          Contact Us
+        </a>
+      </li>
     </ul>
   </nav>
-  <div>
-    <button class="cta-btn" routerLink="/home" fragment="contact" routerLinkActive="active">Contact</button>
-  </div>
+  <div></div>
+  <!-- <button class="cta-btn" (click)="scrollTo('contact')">Contact</button> -->
+  }
+
+  @if (navContext === 'list') {
+  <nav class="secondary-nav">
+    <!-- <button class="cta-btn" (click)="goHome()">← Home</button> -->
+  </nav>
+  }
+
+  @if (navContext === 'detail') {
+  <nav class="secondary-nav">
+    <button class="cta-btn" (click)="goBack()">← Back</button>
+  </nav>
+  }
+
 </header>

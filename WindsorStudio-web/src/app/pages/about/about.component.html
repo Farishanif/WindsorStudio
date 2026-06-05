@@ -1,11 +1,12 @@
 <div class="about-page-container">
   
   <header class="about-hero">
-    <h1>Forging Worlds, One Game at a Time</h1>
-    <p>Windsor Studio is dedicated to crafting deep, immersive narratives and delivering Unique experiences that challenge and delight players globally.</p>
+    <h1>Worlds made for Wonder</h1>
+    <p>Windsor Studio is transforming bold ideas into immersive worlds that spark curiosity 
+      and inspire adventure filled with mystery, excitement, and possibility.</p>
   </header>
 
-  <section class="section-mission">
+  <!-- <section class="section-mission">
     <h2>Our Core Philosophy</h2>
     <div class="mission-cards">
       <div class="card">
@@ -21,16 +22,15 @@
         <p>Creating challenging and rewarding experiences that respect the player's time and choice.</p>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="section-team">
-    <h2>Meet the Architects</h2>
+    <h2>⭐ Meet the Team ⭐</h2>
     <div class="team-grid">
       <div *ngFor="let member of members" class="team-member-card">
         <div class="member-photo" [style.backgroundImage]="'url(' + member.imagePath + ')'"></div>
         <h3>{{ member.name }}</h3>
         <p class="member-job">{{ member.job }}</p>
-        <p class="member-description">{{ member.description }}</p>
       </div>
     </div>
   </section>

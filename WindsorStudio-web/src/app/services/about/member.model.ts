@@ -3,6 +3,5 @@ export interface Member {
   name: string;
   job: string;
   joinDate: Date;
-  description: string;
   imagePath: string;
 }

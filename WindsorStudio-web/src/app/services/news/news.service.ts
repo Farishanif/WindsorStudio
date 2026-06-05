@@ -6,7 +6,7 @@ const MOCK_ARTICLES: Article[] = [
   { 
     id: 1, 
     title: 'WINDSOR: The Creation of the Game Studio Windsor', 
-    summary: `Hi! Keeper Bee Here, I'm very excited to be able to assemble a new team for game development. 
+    summary: `Hi! Kepper Bee Here, I'm very excited to be able to assemble a new team for game development. 
               I will be your lead developer and project lead! So, I am here to help!.`, 
     author: 'DevTeam', 
     date: new Date('2025-11-20'), 

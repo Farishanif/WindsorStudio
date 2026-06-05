@@ -48,6 +48,12 @@ $header-height: 100px;
     }
   }
 
+  nav ul li a.active {
+  // match whatever your existing active/hover style is, e.g.:
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
   .cta-btn {
     // Button with sharp, angular edges
     background: linear-gradient(45deg, $color-accent-primary, darken($color-accent-primary, 20%));
