@@ -47,10 +47,10 @@ const MOCK_MEMBER: Member[] = [
   },
   { 
     id: 7, 
-    name: 'Maffy', 
+    name: 'Marie', 
     job: 'Concept Artist Designer', 
     joinDate: new Date('2025-11-20'),
-    imagePath: '/assets/MTT_Maffy.png'
+    imagePath: '/assets/MTT_Marie.png'
   },
 ];
 
