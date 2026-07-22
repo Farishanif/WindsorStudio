@@ -33,7 +33,7 @@ const MOCK_MEMBER: Member[] = [
   },
   { 
     id: 5, 
-    name: 'Adindachair', 
+    name: 'Adinda :3', 
     job: 'Game Artist and Designer', 
     joinDate: new Date('2025-11-20'),
     imagePath: '/assets/MTT_Adindachair.png'
