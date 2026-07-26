@@ -56,12 +56,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.navContext = 'list';
       this.pageContext = url.includes('profile') ? 'profile' : 
                          url.includes('games') ? 'games' : 
-                         url.includes('contact') ? 'contact' : '';
+                         url.includes('about') ? 'about' : '';
     }
   }
 
   private initScrollSpy(): void {
-    const sections = ['hero', 'profile', 'games', 'contact'];
+    const sections = ['hero', 'profile', 'games', 'about'];
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
