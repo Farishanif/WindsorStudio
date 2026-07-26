@@ -22,11 +22,6 @@ export const routes: Routes = [
   },
 
   {
-    path: 'about',
-    loadChildren: () => import('./pages/about/about.routes').then(m => m.ABOUT_ROUTES)
-  },
-
-  {
     path: '**',
     redirectTo: 'home'
   }

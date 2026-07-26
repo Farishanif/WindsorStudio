@@ -295,11 +295,13 @@ $header-height: 100px;
 // --- ABOUT SECTION STYLING (NEW HERO STYLE) ---
 .about-hero-section {
     position: relative;
-    padding: 100px 5vw;
+    padding: 20px 0 80px; // Changed top padding to 30px and bottom padding to 40px
+    border-bottom: 2px solid $color-dark-surface;
+  
     background-size: cover;
     background-position: center;
     color: $color-text-light; 
-    background: url('/assets/about-background.jpg') center center no-repeat;
+    background: url('/assets/background.jpg') center center no-repeat;
     background-size: 100% 120%;
     
     // Ensure the image doesn't tile if it's smaller than the screen
@@ -319,13 +321,12 @@ $header-height: 100px;
     .hero-overlay {
         position: relative;
         z-index: 10; 
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         text-align: center;
-        
+
         // Optional: Background for the text block itself, if needed
         // background-color: rgba($color-dark-bg, 0.85); 
-        padding: 40px;
         border-radius: 10px;
     }
 
@@ -365,11 +366,48 @@ $header-height: 100px;
     }
 }
 
+// --- Team Section ---
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(150px, calc((100% - 4 * 30px) / 5)), 1fr));
+  gap: 30px;
+  
+  .team-member-card {
+    background-color: $color-dark-surface;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      border: 3px solid $color-accent-primary;
+    }
+    
+    h3 {
+      color: $color-text-light;
+      margin-bottom: 5px;
+    }
+    .member-title {
+      color: $color-accent-primary;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .member-bio {
+      color: $color-text-muted;
+      font-size: 0.9rem;
+    }
+  }
+}
 
 // --- Responsiveness for Tablets/Mobile (Existing, no changes needed) ---
 @media (max-width: 992px) {
     .main-layout-container {
-        grid-template-columns: 1fr; /* Stack into a single column on mid-size screens */
+        grid-template-columns: 1fr;
     }
     .game-showcase-grid {
         grid-template-columns: 1fr 1fr;
@@ -384,8 +422,9 @@ $header-height: 100px;
         height: 300px; 
     }
     .left-sidebar, .right-sidebar {
-        grid-column: 1 / -1; /* Ensure sidebars take full width */
+        grid-column: 1 / -1;
     }
+    // .team-grid override removed — auto-fit handles it now
 }
 
 @media (max-width: 600px) {
@@ -397,9 +436,18 @@ $header-height: 100px;
         height: 300px;
     }
     .about-hero-section {
-        padding: 50px 3vw;
+        padding: 50px 3vw 80px;
     }
     .about-hero-section h2 {
         font-size: 2.5rem;
+    }
+
+    // Keep these — they're not about column count, still needed for tight phones
+    .team-member-card {
+        padding: 15px 10px;
+    }
+    .team-member-card .member-photo {
+        width: 90px;
+        height: 90px;
     }
 }

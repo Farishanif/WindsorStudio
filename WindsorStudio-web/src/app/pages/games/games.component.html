@@ -1,15 +1,12 @@
 <div class="games-page-container">
-  
+
   <header class="gallery-hero">
     <h1>Game Gallery</h1>
   </header>
 
   <div class="filter-bar">
-    <button 
-      *ngFor="let genre of availableGenres"
-      (click)="filterByGenre(genre)"
-      [class.active]="selectedGenre === genre || (selectedGenre === '' && genre === 'All')"
-      class="filter-btn">
+    <button *ngFor="let genre of availableGenres" (click)="filterByGenre(genre)"
+      [class.active]="selectedGenre === genre || (selectedGenre === '' && genre === 'All')" class="filter-btn">
       {{ genre }}
     </button>
   </div>
@@ -18,7 +15,9 @@
     <article *ngFor="let game of filteredGames" class="gallery-card">
       <div class="card-image-wrapper">
         <img [src]="game.imagePath" [alt]="game.title">
-        <div class="release-tag">{{ game.releaseDate | date: 'MMM yyyy' }}</div>
+        <div class="release-tag">
+          {{ game.releaseDate ? (game.releaseDate | date: 'MMM yyyy') : 'Coming Soon' }}
+        </div>
       </div>
       <div class="card-content">
         <h3>{{ game.title }}</h3>
@@ -42,12 +41,12 @@
 
 <!-- when not loading, show games from signal -->
 <!-- <ul *ngIf="!loading && games().length > 0"> -->
-  <!-- <li *ngFor="let game of games(); trackBy: trackById"> -->
-    <!-- {{ game.name }} – {{ game.genre }} -->
-  <!-- </li> -->
+<!-- <li *ngFor="let game of games(); trackBy: trackById"> -->
+<!-- {{ game.name }} – {{ game.genre }} -->
+<!-- </li> -->
 <!-- </ul> -->
 
 <!-- no-results -->
 <!-- <div *ngIf="!loading && !error && games().length === 0"> -->
-  <!-- No games found. -->
+<!-- No games found. -->
 <!-- </div> -->

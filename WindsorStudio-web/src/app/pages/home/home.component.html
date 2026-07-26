@@ -30,7 +30,6 @@
         <article *ngIf="latestGames[0]" class="game-card large"
           [style.backgroundImage]="'url(' + latestGames[0].imagePath + ')'">
           <div class="card-info">
-            <span class="category-tag">{{ latestGames[0].genres[0] || 'Game' }}</span>
             <h3>{{ latestGames[0].title }}</h3>
             <p>{{ latestGames[0].tagline }}</p>
             <a [routerLink]="['/games', latestGames[0].id]" class="btn-detail">Discover</a>
@@ -51,15 +50,15 @@
           </div>
         </article>
         <article *ngIf="latestNews[0]" class="game-card wide"
-          [style.backgroundImage]="'url(' + latestNews[0].imagePath + ')'">
+          [style.backgroundImage]="'url(\'/assets/show_more.jpg\')'">
           <div class="card-info">
-            <span class="category-tag news-tag">{{ latestNews[0].category }}</span>
-            <h3>{{ latestNews[0].title }}</h3>
-            <a [routerLink]="['/news', latestNews[0].id]" class="btn-detail">Read Blog</a>
+
+            <h3> DISCOVER MORE GAMES FROM OUR STUDIO!</h3>
+            <a routerLink="/games" class="btn-detail">CLICK HERE</a>
           </div>
         </article>
       </section>
-      <a routerLink="/games" class="view-all-link">Check All of Our Games &rarr;</a>
+
     </main>
 
     <aside class="right-sidebar">
@@ -68,16 +67,18 @@
     </aside>
   </section>
 
-  <section id="contact">
-    <section class="about-hero-section">
-      <div class="hero-overlay">
-        <h2>About Windsor Studio</h2>
-        <p class="tagline">Forging captivating digital realms with a focus on narrative and innovation.</p>
-        <p>We are an independent game studio focused on blending storytelling, art, and gameplay into unforgettable
-          experiences.</p>
-        <a routerLink="/about" routerLinkActive="app-about" class="btn-primary-inverse">Read Our Story</a>
-      </div>
-    </section>
+  <section id="about" class="about-hero-section">
+    <div class="hero-overlay">
+
+        <h2>⭐ Meet the Team ⭐</h2>
+        <div class="team-grid">
+          <div *ngFor="let member of latestMembers" class="team-member-card">
+            <div class="member-photo" [style.backgroundImage]="'url(' + member.imagePath + ')'"></div>
+            <h3>{{ member.name }}</h3>
+            <p class="member-job">{{ member.job }}</p>
+          </div>
+        </div>
+    </div>
   </section>
 
 </div>
