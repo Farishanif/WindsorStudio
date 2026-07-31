@@ -71,13 +71,36 @@
     <div class="hero-overlay">
 
         <h2>⭐ Meet the Team ⭐</h2>
-        <div class="team-grid">
-          <div *ngFor="let member of latestMembers" class="team-member-card">
-            <div class="member-photo" [style.backgroundImage]="'url(' + member.imagePath + ')'"></div>
-            <h3>{{ member.name }}</h3>
-            <p class="member-job">{{ member.job }}</p>
+        <section class="team-group" aria-labelledby="core-team-heading">
+          <h3 id="core-team-heading" class="team-group-heading">- core team -</h3>
+          <div class="team-grid">
+            <div *ngFor="let member of coreTeamMembers" class="team-member-card">
+              <div
+                class="member-photo"
+                [style.backgroundImage]="'url(' + member.imagePath + '), url(/assets/comingsoon.jpg)'"
+              ></div>
+              <h3>{{ member.name }}</h3>
+              <p class="member-job">{{ member.job }}</p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <section class="team-group" aria-labelledby="new-team-heading">
+          <h3 id="new-team-heading" class="team-group-heading">- new team -</h3>
+          <section *ngFor="let roleGroup of newTeamRoleGroups" class="role-group">
+            <h4 class="role-group-heading">{{ roleGroup.label }}</h4>
+            <div class="team-grid">
+              <div *ngFor="let member of roleGroup.members" class="team-member-card">
+                <div
+                  class="member-photo"
+                  [style.backgroundImage]="'url(' + member.imagePath + '), url(/assets/comingsoon.jpg)'"
+                ></div>
+                <h3>{{ member.name }}</h3>
+                <p class="member-job">{{ member.job }}</p>
+              </div>
+            </div>
+          </section>
+        </section>
     </div>
   </section>
 

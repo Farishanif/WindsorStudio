@@ -14,7 +14,19 @@
   </div>
 
   @if (navContext === 'home') {
-  <nav>
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Toggle navigation menu"
+    aria-controls="primary-navigation"
+    [attr.aria-expanded]="menuOpen"
+    (click)="toggleMenu()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav id="primary-navigation" class="primary-nav" [class.menu-open]="menuOpen">
     <ul>
       <li>
         <a (click)="scrollTo('profile')" [class.active]="activeSection === 'profile'" style="cursor:pointer">

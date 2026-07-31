@@ -16,7 +16,8 @@ import { AboutService } from '../../services/about/about.service';
 export class HomeComponent implements OnInit {
   latestGames: Game[] = [];
   latestNews: Article[] = [];
-  latestMembers: Member[] = [];
+  coreTeamMembers: Member[] = [];
+  newTeamRoleGroups: { label: string; members: Member[] }[] = [];
 
   constructor(
     private gamesService: GamesService,
@@ -42,7 +43,38 @@ export class HomeComponent implements OnInit {
 
 
     this.aboutService.getAllMembers().subscribe(data => {
-      this.latestMembers = data;
+      this.coreTeamMembers = data.filter(member => member.team === 'core');
+      const newTeamMembers = data.filter(member => member.team === 'new');
+      const hasRole = (member: Member, role: string) => member.job.includes(role);
+      const hasBothCreativeRoles = (member: Member) =>
+        hasRole(member, 'Writer') && hasRole(member, 'Artist');
+
+      this.newTeamRoleGroups = [
+        {
+          label: 'Programmers',
+          members: newTeamMembers.filter(member => hasRole(member, 'Programmer'))
+        },
+        {
+          label: 'Writers',
+          members: newTeamMembers.filter(
+            member => hasRole(member, 'Writer') && !hasBothCreativeRoles(member)
+          )
+        },
+        {
+          label: 'Writers & Artists',
+          members: newTeamMembers.filter(hasBothCreativeRoles)
+        },
+        {
+          label: 'Artists',
+          members: newTeamMembers.filter(
+            member => hasRole(member, 'Artist') && !hasBothCreativeRoles(member)
+          )
+        },
+        {
+          label: 'Sound',
+          members: newTeamMembers.filter(member => hasRole(member, 'Sound'))
+        }
+      ];
     });
 
     // 2. Fetch 3 newest news articles
