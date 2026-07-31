@@ -367,12 +367,43 @@ $header-height: 100px;
 }
 
 // --- Team Section ---
+.team-group {
+  & + & {
+    margin-top: 50px;
+  }
+}
+
+.team-group-heading {
+  margin: 0 0 24px;
+  color: $color-accent-primary;
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.role-group {
+  & + & {
+    margin-top: 36px;
+  }
+}
+
+.role-group-heading {
+  margin: 0 0 18px;
+  color: $color-text-light;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max(150px, calc((100% - 4 * 30px) / 5)), 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   
   .team-member-card {
+    flex: 0 1 max(150px, calc((100% - 4 * 30px) / 5));
+    box-sizing: border-box;
     background-color: $color-dark-surface;
     padding: 20px;
     border-radius: 8px;

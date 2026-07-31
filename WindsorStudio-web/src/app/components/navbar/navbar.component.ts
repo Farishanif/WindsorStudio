@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Router, NavigationEnd, RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   activeSection: string = 'hero';
   navContext: NavContext = 'home';
   pageContext: string = '';       
+  menuOpen = false;
   private observer!: IntersectionObserver;
   private routerSub!: Subscription;
 
@@ -77,11 +78,21 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   scrollTo(sectionId: string): void {
+    this.menuOpen = false;
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       this.activeSection = sectionId;
     }
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  @HostListener('document:keydown.escape')
+  closeMenu(): void {
+    this.menuOpen = false;
   }
 
   goBack(): void {
