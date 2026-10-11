@@ -1,7 +1,7 @@
 <div> 
   <h1>Windsor Studio</h1>
   <p>Checkout the current web:</p>
-  <a href="https://windsorstudio.pages.dev/home" target="_blank" rel="noopener noreferrer">windsorstudio.pages.dev</a>
+  [windsorstudio.pages.dev](https://pages.dev)
 </div>
 <div> 
   <h2>Frontend: </h1>
