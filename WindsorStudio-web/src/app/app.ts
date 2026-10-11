@@ -3,13 +3,14 @@ import { Router, NavigationEnd, RouterOutlet, RouterModule } from '@angular/rout
 import { ViewportScroller } from '@angular/common';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
-  imports: [RouterOutlet, RouterModule, NavbarComponent, FooterComponent]
+  imports: [RouterOutlet, RouterModule, NavbarComponent, FooterComponent, ChatBotComponent ]
 })
 export class App implements OnInit {
   constructor(

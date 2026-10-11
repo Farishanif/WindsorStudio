@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindsorApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61cefcebb391a3af82432fa88f2914d4e6454b0a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be27f14bb476b235b0e07450081b082a6918a07b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindsorApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindsorApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
