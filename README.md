@@ -1,12 +1,9 @@
 <div> 
   <h1>Windsor Studio</h1>
+  <p href="https://windsorstudio.pages.dev/home">windsorstudio.pages.dev</p>
 </div>
 <div> 
   <h2>Frontend: </h1>
-</div>
-<div>
-  <h1>You can access it here:</h1>
-  <p href="[url](https://windsorstudio.pages.dev/home)">windsorstudio.pages.dev</p>
 </div>
 </div>
 <div>
