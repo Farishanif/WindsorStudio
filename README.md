@@ -1,7 +1,7 @@
 <div> 
   <h1>Windsor Studio</h1>
   <p>Checkout the current web:</p>
-  [windsorstudio.pages.dev](https://pages.dev)
+  https://windsorstudio.pages.dev/
 </div>
 <div> 
   <h2>Frontend: </h1>
