@@ -5,6 +5,12 @@
   <h2>Frontend: </h1>
 </div>
 <div>
+  <h1>You can access it here:</h1>
+  <p href="[url](https://windsorstudio.pages.dev/home)">windsorstudio.pages.dev</p>
+</div>
+</div>
+<div>
+  <h1> heres the current view(old):</h1>
   <p>1. Home Page</p>
   <image src="./imageFolder/home-pages-1.png">
   <image src="./imageFolder/home-pages-2.png">
