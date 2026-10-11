@@ -4,5 +4,5 @@ export interface Member {
   job: string;
   joinDate: Date;
   imagePath: string;
-  team: 'core' | 'new';
+  team: 'Lead' | 'Developer' | 'Writer' | 'Artist' | 'Sound' ;
 }

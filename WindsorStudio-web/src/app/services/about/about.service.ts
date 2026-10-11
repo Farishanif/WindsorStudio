@@ -6,80 +6,123 @@ const MOCK_MEMBER: Member[] = [
   { 
     id: 1, 
     name: 'KepperBee', 
-    job: 'Lead Developer / Project Leader', 
+    job: 'Project Leader, Manager and Game Developer', 
     joinDate: new Date('2025-11-20'),
     imagePath: '/assets/MTT_KepperBee.png',
-    team: 'core'
+    team: 'Lead'
   },
   { 
     id: 2, 
-    name: 'Dattap', 
-    job: 'Senior Game Developer', 
-    joinDate: new Date('2025-11-20'),
-    imagePath: '/assets/MTT_Dattap.png',
-    team: 'core'
+    name: 'Hydra', 
+    job: 'Lead Game Developer', 
+    joinDate: new Date('2026-10-30'),
+    imagePath: '/assets/MTT_Hydra.png',
+    team: 'Lead'
   },
   { 
     id: 3, 
+    name: 'Farizzz', 
+    job: 'Game developer, Web Developer, and Programmer', 
+    joinDate: new Date('2025-11-20'),
+    imagePath: '/assets/MTT_farizzz.png',
+    team: 'Developer'
+  },
+  { 
+    id: 4, 
+    name: 'Ryven', 
+    job: 'Game developer, and Programmer', 
+    joinDate: new Date('2026-07-30'),
+    imagePath: '/assets/MTT_Ryven.png',
+    team: 'Developer'
+  },
+  { 
+    id: 5, 
+    name: 'Dattap', 
+    job: 'Game Developer', 
+    joinDate: new Date('2025-11-20'),
+    imagePath: '/assets/MTT_Dattap.png',
+    team: 'Developer'
+  }, 
+  { 
+    id: 6, 
+    name: 'Abbhas', 
+    job: 'Game developer', 
+    joinDate: new Date('2026-07-30'),
+    imagePath: '/assets/MTT_Abbhas.png',
+    team: 'Developer'
+  },
+  { 
+    id: 7, 
     name: 'Erika', 
     job: 'Game Designer and Concept Artist', 
     joinDate: new Date('2025-11-20'),
     imagePath: '/assets/comingsoon.jpg',
-    team: 'core'
+    team: 'Artist'
   },
   { 
-    id: 4, 
-    name: 'Farizzz', 
-    job: 'Game developer and Programmer', 
-    joinDate: new Date('2025-11-20'),
-    imagePath: '/assets/MTT_farizzz.png',
-    team: 'core'
-  },
-  { 
-    id: 5, 
+    id: 8, 
     name: 'Adinda :3', 
     job: 'Game Artist and Designer', 
     joinDate: new Date('2025-11-20'),
     imagePath: '/assets/MTT_Adindachair.png',
-    team: 'core'
+    team: 'Artist'
   },
   { 
-    id: 6, 
+    id: 9, 
     name: 'Keenan', 
     job: 'Concept Artist Designer', 
     joinDate: new Date('2025-11-20'),
     imagePath: '/assets/MTT_Keenan.png',
-    team: 'core'
+    team: 'Artist'
   },
   { 
-    id: 7, 
+    id: 10, 
     name: 'Marie', 
     job: 'Concept Artist Designer', 
     joinDate: new Date('2025-11-20'),
     imagePath: '/assets/MTT_Marie.png',
-    team: 'core'
+    team: 'Artist'
   },
-  ...[
-    ['lewis', 'Programmer'],
-    ['Rares', 'Programmer'],
-    ['Ryven', 'Programmer'],
-    ['abhas', 'Programmer'],
-    ['Slap', 'Writer'],
-    ['Noctai', 'Writer'],
-    ['Hamnah', 'Writer'],
-    ['Marysal', 'Artist'],
-    ['Mandy', 'Writer, Artist'],
-    ['Nela', 'Artist'],
-    ['Gessie', 'Artist, Writer'],
-    ['Krylkh', 'Sound Designer']
-  ].map(([name, job], index): Member => ({
-    id: index + 8,
-    name,
-    job,
+  { 
+    id: 11, 
+    name: 'Hamnah', 
+    job: 'Writer', 
     joinDate: new Date('2026-07-30'),
-    imagePath: `/assets/MTT_${name}.png`,
-    team: 'new'
-  }))
+    imagePath: '/assets/MTT_Hamnah.png',
+    team: 'Writer'
+  },
+  { 
+    id: 12, 
+    name: 'Slap', 
+    job: 'Writer', 
+    joinDate: new Date('2026-07-30'),
+    imagePath: '/assets/MTT_Slap.png',
+    team: 'Writer'
+  },
+  { 
+    id: 13, 
+    name: 'Gessie', 
+    job: 'Writer', 
+    joinDate: new Date('2026-07-30'),
+    imagePath: '/assets/MTT_Gessie.png',
+    team: 'Writer'
+  },
+  { 
+    id: 14, 
+    name: 'Mandy', 
+    job: 'Writer', 
+    joinDate: new Date('2026-07-30'),
+    imagePath: '/assets/MTT_Mandy.png',
+    team: 'Writer'
+  },
+  { 
+    id: 15, 
+    name: 'Krylkh', 
+    job: 'Sound Designer', 
+    joinDate: new Date('2026-07-30'),
+    imagePath: '/assets/MTT_Krylkh.png',
+    team: 'Sound'
+  }
 ];
 
 @Injectable({

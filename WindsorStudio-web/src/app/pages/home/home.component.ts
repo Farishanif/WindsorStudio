@@ -16,8 +16,7 @@ import { AboutService } from '../../services/about/about.service';
 export class HomeComponent implements OnInit {
   latestGames: Game[] = [];
   latestNews: Article[] = [];
-  coreTeamMembers: Member[] = [];
-  newTeamRoleGroups: { label: string; members: Member[] }[] = [];
+  teamRoleGroups: { label: string; members: Member[] }[] = [];
 
   constructor(
     private gamesService: GamesService,
@@ -43,36 +42,28 @@ export class HomeComponent implements OnInit {
 
 
     this.aboutService.getAllMembers().subscribe(data => {
-      this.coreTeamMembers = data.filter(member => member.team === 'core');
-      const newTeamMembers = data.filter(member => member.team === 'new');
-      const hasRole = (member: Member, role: string) => member.job.includes(role);
-      const hasBothCreativeRoles = (member: Member) =>
-        hasRole(member, 'Writer') && hasRole(member, 'Artist');
+      const hasRole = (member: Member, role: string) => member.team === role;
 
-      this.newTeamRoleGroups = [
+      this.teamRoleGroups = [
         {
-          label: 'Programmers',
-          members: newTeamMembers.filter(member => hasRole(member, 'Programmer'))
+          label: 'Project Lead',
+          members: data.filter(member => hasRole(member, 'Lead'))
         },
         {
-          label: 'Writers',
-          members: newTeamMembers.filter(
-            member => hasRole(member, 'Writer') && !hasBothCreativeRoles(member)
-          )
+          label: 'Game Developers',
+          members: data.filter(member => hasRole(member, 'Developer'))
         },
         {
-          label: 'Writers & Artists',
-          members: newTeamMembers.filter(hasBothCreativeRoles)
+          label: 'Game Artists',
+          members: data.filter(member => hasRole(member, 'Artist'))
         },
         {
-          label: 'Artists',
-          members: newTeamMembers.filter(
-            member => hasRole(member, 'Artist') && !hasBothCreativeRoles(member)
-          )
+          label: 'Game Writers',
+          members: data.filter(member => hasRole(member, 'Writer'))
         },
         {
-          label: 'Sound',
-          members: newTeamMembers.filter(member => hasRole(member, 'Sound'))
+          label: 'Sound Designer',
+          members: data.filter(member => hasRole(member, 'Sound'))
         }
       ];
     });

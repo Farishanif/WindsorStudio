@@ -48,7 +48,7 @@ export class ChatBotComponent implements OnInit {
           Answer questions enthusiastically about Windsor Studio.
 
           Windsor Studio is a Game development Studio founded and realized by a great visioner called KeeperBee.
-          The ai assistant creator and main Website Developer is named Faris.
+          Faris is the ai assistant creator, one of the game developers and the main Website Developer.
           If you don't know the answer, say "I don't know" instead of making up an answer.
 
           # OFFICIAL WINDSOR STUDIO GAMES CATALOG DATA:
